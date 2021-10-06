@@ -149,6 +149,15 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
+let computer = Math.random();
+
+if(computer <= 0.34){
+  computer = 'scissors';
+}else if(computer <= 0.67){
+  computer = 'rock';
+}else if(computer > 0.67){
+  computer = 'paper';
+}
 
 function game(user, computer){
   if(user === computer){
@@ -163,7 +172,7 @@ function game(user, computer){
     return 'you lose!';
   }
 }
-// console.log(game('paper', computer));
+console.log(game('paper', computer));
 
 
 
@@ -208,10 +217,12 @@ Using the annoyingSong function below do the following:
     "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-      /*add your code here*/
+function annoyingSong(number){
+      for(let i = number; i > 0; i --){
+        return `${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i -1} bottles of soda on the wall`;
+      }
 }
-
+console.log('task 6', annoyingSong(99));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -229,9 +240,19 @@ Using the grade function below do the following:
 */
 
 function grade(score){
-
+  if(score >=90){
+    return `you got an A`;
+  }else if(score < 90 && score >= 80){
+    return `you got a B`;
+  }else if(score < 80 && score >=70){
+    return `you got a C`;
+  }else if(score < 70 && score >= 60){
+    return `you got a D`;
+  }else if(score < 60){
+    return `you got an F`;
+  }
 }
-
+console.log('task 7', grade(90));
 
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
